@@ -1,0 +1,21 @@
+{
+  "name": "kat-wallet-bot-tg",
+  "version": "1.0.0",
+  "description": "A Telegram bot for KRC20 token information",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "telegraf": "^4.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "@types/node": "^16.11.7",
+    "ts-node-dev": "^1.1.8"
+  }
+}
