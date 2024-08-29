@@ -1,6 +1,6 @@
 # Kat-Wallet-Bot-TG
 
-Kat-Wallet-Bot-TG is a Telegram bot designed to provide information about KRC20 tokens. It allows users to check token balances for a given wallet address and retrieve specific token information.
+Kat-Wallet-Bot-TG is a Telegram bot designed to provide information about KRC20 tokens. It allows users to check token balances for a given wallet address and retrieve critical token information.
 
 ## Features
 
@@ -18,7 +18,7 @@ Kat-Wallet-Bot-TG is a Telegram bot designed to provide information about KRC20 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/kat-wallet-bot-tg.git
+   git clone https://github.com/argonmining/kat-wallet-bot-tg.git
    cd kat-wallet-bot-tg
    ```
 
@@ -30,9 +30,13 @@ Kat-Wallet-Bot-TG is a Telegram bot designed to provide information about KRC20 
 3. Create a `.env` file in the root directory and add the following environment variables:
    ```
    TELEGRAM_TOKEN=your_telegram_bot_token
-   MAINNET_API_BASE_URL=your_krc20_api_base_url
+   MAINNET_API_BASE_URL=kasplex_krc20_api_base_url
    ```
 
 ## Usage
 
-To start the bot in development mode:
+Check the Bot Management file for additional usage instructions. 
+
+## Kasplex API
+
+https://docs.kasplex.org/tools-and-reference/kasplex-indexer-api
