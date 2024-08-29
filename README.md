@@ -35,6 +35,11 @@ Kat-Wallet-Bot-TG is a Telegram bot designed to provide information about KRC20 
 
 ## Usage
 
+```
+npm run build
+npm start
+```
+
 Check the Bot Management file for additional usage instructions. 
 
 ## Kasplex API
