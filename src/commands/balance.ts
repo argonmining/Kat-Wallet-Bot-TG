@@ -3,15 +3,19 @@ import { fetchKRC20Balances, formatBalance } from '../utils';
 import { isTextMessage } from '../utils';
 
 export const handleBalanceCommand = async (ctx: Context) => {
-  // Check if the message is a text message (for both groups/channels and DMs)
   if (ctx.message && isTextMessage(ctx.message)) {
     const args = ctx.message.text.split(' ').slice(1);
 
     if (args.length !== 1) {
-      return ctx.reply('Please provide a valid wallet address. Usage: /balance <WALLET_ADDRESS>');
+      return ctx.reply('Please provide a valid Kaspa wallet address. Usage: /balance <KASPA_WALLET_ADDRESS>');
     }
 
-    const address = args[0];
+    const address = args[0].trim();
+
+    // Kaspa address format: kaspa:q...
+    if (!/^kaspa:[a-z0-9]{61,63}$/.test(address)) {
+      return ctx.reply('Invalid Kaspa wallet address format. Please provide a valid Kaspa address starting with "kaspa:".');
+    }
 
     try {
       const balances = await fetchKRC20Balances(address);
@@ -28,7 +32,7 @@ export const handleBalanceCommand = async (ctx: Context) => {
       ctx.reply(response);
     } catch (error) {
       console.error(`Error handling balance command: ${error}`);
-      ctx.reply('Failed to retrieve balances. Please try again later.');
+      ctx.reply('Failed to retrieve balances. Please try again later or contact support if the issue persists.');
     }
   } else {
     ctx.reply('This command only works with text messages.');
