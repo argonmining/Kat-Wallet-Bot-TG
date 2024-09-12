@@ -1,7 +1,8 @@
 import { Telegraf } from 'telegraf';
 import dotenv from 'dotenv';
 import { handleBalanceCommand } from './commands/balance';
-import { handleStatusCommand } from './commands/status'; 
+import { handleStatusCommand } from './commands/status';
+import { handleMintCommand } from './commands/mint'; // Add this line
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ bot.help((ctx) => {
 Available commands:
 /balance <WALLET_ADDRESS> - Check KRC20 token balances for a wallet
 /status <TOKEN_TICKER> - Get information about a specific KRC20 token
+/mint - Get a link to mint KRC20 tokens
 `;
   ctx.reply(helpMessage);
 });
@@ -21,7 +23,10 @@ Available commands:
 bot.command('balance', handleBalanceCommand);
 
 // Register the /status command
-bot.command('status', handleStatusCommand); // Update this line
+bot.command('status', handleStatusCommand);
+
+// Register the /mint command
+bot.command('mint', handleMintCommand);
 
 bot.launch()
   .then(() => {
